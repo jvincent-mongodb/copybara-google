@@ -41,6 +41,8 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y git mercurial quilt && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install openssh-client
+
 COPY --from=buildtools /go/bin/buildozer /go/bin/buildifier /usr/local/bin/
 COPY --from=build /home/ubuntu/bazel-bin/java/com/google/copybara/copybara_deploy.jar /opt/copybara/copybara_deploy.jar
 COPY .docker/copybara /usr/local/bin/copybara
