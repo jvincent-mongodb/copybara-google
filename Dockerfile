@@ -38,7 +38,7 @@ RUN bazel build //java/com/google/copybara:copybara_deploy.jar --java_language_v
 FROM docker.io/eclipse-temurin:17-jre-jammy
 
 RUN apt-get update && \
-    apt-get install openssh-client && \
+    # apt-get install openssh-client && \
     apt-get install --no-install-recommends -y git mercurial quilt && \
     rm -rf /var/lib/apt/lists/*
 
