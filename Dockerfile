@@ -47,5 +47,5 @@ COPY --from=build /home/ubuntu/bazel-bin/java/com/google/copybara/copybara_deplo
 COPY .docker/copybara /usr/local/bin/copybara
 
 ENTRYPOINT ["/usr/local/bin/copybara"]
-CMD ["migrate", "copy.bara.sky", "--force"]
+CMD ["migrate", "copy.bara.sky", "--force", "-last-rev"]
 WORKDIR /usr/src/app
